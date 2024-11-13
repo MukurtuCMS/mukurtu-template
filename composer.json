@@ -7,16 +7,53 @@
     "support": {
         "docs": "https://mukurtudocs.readthedocs.io"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "asset-packagist": {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        "masonry": {
+            "type": "package",
+            "package": {
+                "name": "mukurtu/masonry",
+                "version": "4.2.2",
+                "dist": {
+                    "url": "https://github.com/desandro/masonry/archive/v4.2.2.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        "colorbox": {
+            "type": "package",
+            "package": {
+                "name": "mukurtu/colorbox",
+                "version": "1.6.4",
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        "og": {
+            "type": "package",
+            "package": {
+                "name": "mukurtu/og",
+                "version": "1.0.0",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/zerolab/og.git",
+                    "type": "git",
+                    "reference": "196-redux"
+                }
+            }
         }
-    ],
+    },
     "require": {
         "mukurtu/mukurtu-cms": "dev-main"
     },
