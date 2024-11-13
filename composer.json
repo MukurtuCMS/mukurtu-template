@@ -39,23 +39,16 @@
                 },
                 "type": "drupal-library"
             }
-        },
-        "og": {
-            "type": "package",
-            "package": {
-                "name": "mukurtu/og",
-                "version": "1.0.0",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://github.com/zerolab/og.git",
-                    "type": "git",
-                    "reference": "196-redux"
-                }
-            }
         }
     },
     "require": {
         "mukurtu/mukurtu-cms": "dev-main"
+    },
+    "require-dev": {
+        "drupal/core-dev": "*",
+        "drupal/devel": "*",
+        "drupal/devel_php": "*",
+        "phpspec/prophecy-phpunit": "^2"
     },
     "conflict": {
         "drupal/drupal": "*"
