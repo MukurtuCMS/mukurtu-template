@@ -1,5 +1,17 @@
-composer.lock
-vendor/
-web/
-.gitattributes
-.editorconfig
+# When using as a site installation, the following lines should be removed so
+# that dependencies can be locked and other code tracked.
+/composer.lock
+/web/
+
+# Dependencies:
+/vendor/
+
+# Development:
+/.ddev
+/.gitattributes
+/phpunit.xml
+
+# Code editors:
+/.vscode
+/.idea
+/.editorconfig
