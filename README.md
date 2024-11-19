@@ -16,7 +16,7 @@ mkdir mukurtu
 cd mukurtu
 ddev config --project-type=drupal --docroot=web
 ddev start
-ddev composer create mukurtu/mukurtu-template:dev-main
+ddev composer create mukurtu/mukurtu-template:dev-main .
 ddev drush si --site-name=Mukurtu --account-name=admin --account-pass=admin
 ddev launch
 ```
@@ -36,7 +36,7 @@ mv composer.phar composer
 ```
 mkdir mukurtu
 cd mukurtu
-composer create-project mukurtu/mukurtu-template:dev-main
+composer create-project mukurtu/mukurtu-template:dev-main .
 ```
 * Set your web server to serve the "web" folder (e.g. `mukurtu4/web`)
 * Install Drupal as normal by opening the site in your web browser, the Mukurtu profile distribution will automatically be used.
