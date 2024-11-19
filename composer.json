@@ -1,36 +1,22 @@
 {
-    "name": "mukurtu/mukurtu-cms-project",
-    "description": "Project template for Mukurtu CMS v4",
+    "name": "mukurtu/mukurtu-template",
+    "description": "Project template for Mukurtu CMS v4+",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://mukurtu.org",
     "support": {
-        "docs": "https://mukurtu.org",
-        "chat": "https://mukurtu.org"
+        "docs": "https://mukurtudocs.readthedocs.io"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "asset-packagist": {
             "type": "composer",
             "url": "https://asset-packagist.org"
         },
-        {
-            "type": "package",
-            "package": {
-                "name": "mukurtu/og",
-                "version": "1.0.0",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://github.com/zerolab/og.git",
-                    "type": "git",
-                    "reference": "196-redux"
-                }
-            }
-        },
-        {
+        "colorbox": {
             "type": "package",
             "package": {
                 "name": "mukurtu/colorbox",
@@ -42,7 +28,7 @@
                 "type": "drupal-library"
             }
         },
-        {
+        "masonry": {
             "type": "package",
             "package": {
                 "name": "mukurtu/masonry",
@@ -53,69 +39,10 @@
                 },
                 "type": "drupal-library"
             }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/MukurtuCMS/Mukurtu-CMS.git"
         }
-    ],
+    },
     "require": {
-        "composer/installers": "^1.9",
-        "cweagans/composer-patches": "^1.7",
-	"drupal/blazy": "^2.24",
-        "drupal/ckeditor_config": "^3.4",
-        "drupal/ckeditor_iframe": "^2.2",
-        "drupal/colorbox": "2.0.2",
-        "drupal/config_pages": "^2.15",
-        "drupal/console": "~1.0",
-        "drupal/content_browser": "*",
-        "drupal/core": "^9.5.3",
-        "drupal/core-composer-scaffold": "^9.5.3",
-        "drupal/core-project-message": "^9.5.3",
-        "drupal/core-recommended": "^9.5.3",
-        "drupal/csv_serialization": "*",
-        "drupal/ctools": "*",
-        "drupal/diff": "*",
-        "drupal/embed": "*",
-        "drupal/entity_browser": "*",
-        "drupal/entity_embed": "*",
-        "drupal/entity_reference_revisions": "*",
-        "drupal/facets": "^2.0.6",
-        "drupal/facets_reset_button": "^1.0",
-        "drupal/field_group": "^3.4",
-        "drupal/flag": "*",
-        "drupal/geofield": "^1.59",
-        "drupal/geolocation": "*",
-        "drupal/google_analytics": "*",
-        "drupal/inline_entity_form": "^3.0@RC",
-        "drupal/leaflet": "^2.1",
-        "drupal/media_entity_browser": "^2.0",
-        "drupal/media_entity_soundcloud": "^3.1",
-        "drupal/message": "^1.5",
-        "drupal/message_digest": "^1.3",
-        "drupal/message_digest_ui": "*",
-        "drupal/message_notify": "^1.3",
-        "drupal/message_subscribe": "^1.2",
-        "drupal/message_ui": "^1.0@beta",
-        "drupal/migrate_conditions": "^2.1",
-        "drupal/migrate_plus": "^6.0",
-        "drupal/migrate_source_csv": "^3.5",
-        "drupal/migrate_tools": "^6.0",
-        "drupal/paragraphs": "*",
-        "drupal/pathauto": "*",
-        "drupal/redirect": "*",
-        "drupal/restui": "*",
-        "drupal/search_api": "*",
-        "drupal/search_api_glossary": "*",
-        "drupal/search_api_solr": "^4.3",
-        "drupal/token": "*",
-        "drupal/twig_tweak": "^3.2",
-        "drupal/views_bulk_operations": "*",
-        "drush/drush": "^10",
-        "mukurtu/masonry": "*",
-        "mukurtu/mukurtu-cms": "dev-main",
-        "mukurtu/og": "*",
-        "sibyx/phpgpx": "@RC"
+        "mukurtu/mukurtu-cms": "dev-main"
     },
     "require-dev": {
         "drupal/core-dev": "*",
@@ -129,21 +56,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true,
-        "fxp-asset": {
-            "installer-paths": {
-                "npm-asset-library": "web/libraries",
-                "bower-asset-library": "web/libraries"
-            }
-        },
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/console-extend-plugin": true,
-            "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true
-        }
+            "drupal/core-project-message": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
     },
     "extra": {
         "drupal-scaffold": {
@@ -152,59 +75,16 @@
             }
         },
         "installer-paths": {
-            "web/core": [
-                "type:drupal-core"
-            ],
-            "web/libraries/{$name}": [
-                "type:drupal-library"
-            ],
-            "web/modules/contrib/{$name}": [
-                "type:drupal-module"
-            ],
-            "web/profiles/contrib/{$name}": [
-                "type:drupal-profile"
-            ],
-            "web/themes/contrib/{$name}": [
-                "type:drupal-theme"
-            ],
-            "drush/Commands/contrib/{$name}": [
-                "type:drupal-drush"
-            ],
-            "web/modules/custom/{$name}": [
-                "type:drupal-custom-module"
-            ],
-            "web/themes/custom/{$name}": [
-                "type:drupal-custom-theme"
-            ]
-        },
-        "patches": {
-            "drupal/views_combine": {
-                "Fix illegal choice on exposed sort error": "https://www.drupal.org/files/issues/2022-01-17/3259018-6-illegal-sort-choice.patch"
-            },
-	    "drupal/paragraphs": {
-                "Ensure empty paragraphs register as empty": "web/profiles/contrib/mukurtu-cms/patches/paragraphs-118.patch"
-            }
-        },
-        "drupal-core-project-message": {
-            "include-keys": [
-                "homepage",
-                "support"
-            ],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-                "  * Install the site: https://www.drupal.org/docs/8/install",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "recipes/{$name}": ["type:drupal-recipe"]
         }
     }
 }
