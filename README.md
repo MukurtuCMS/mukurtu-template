@@ -3,7 +3,7 @@
 ## Requirements
 * The necessary database server, web server, and PHP installed that meet [modern Drupal requirements](https://www.drupal.org/docs/system-requirements)
 * [Composer](https://getcomposer.org/)
-* For local development, we encourage using [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) (which includes composer)
+* For local development, we encourage using [Docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) and [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) (which includes composer)
 
 ## Install Mukurtu with DDEV
 
