@@ -14,12 +14,13 @@ Using DDEV is the easiest way to get up and running with Mukurtu locally.
 ```
 mkdir mukurtu
 cd mukurtu
-ddev config --project-type=drupal --docroot=web
+ddev config --project-type=drupal9 --docroot=web
 ddev start
-ddev composer create mukurtu/mukurtu-template:dev-main .
+ddev composer create mukurtu/mukurtu-template:dev-main
 ddev drush si --site-name=Mukurtu --account-name=admin --account-pass=admin
 ddev launch
 ```
+* If planning to develop on the Mukurtu CMS installation profile, follow the [additional installation steps to connect a Git checkout to the new project](https://github.com/MukurtuCMS/Mukurtu-CMS/wiki).
 
 ## Installing Mukurtu CMS with Composer
 
