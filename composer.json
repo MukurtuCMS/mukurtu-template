@@ -42,7 +42,7 @@
         }
     },
     "require": {
-        "mukurtu/mukurtu-cms": "*"
+        "mukurtu/mukurtu": "*"
     },
     "require-dev": {
         "drupal/core-dev": "*",
