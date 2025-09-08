@@ -15,30 +15,6 @@
         "asset-packagist": {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        "colorbox": {
-            "type": "package",
-            "package": {
-                "name": "mukurtu/colorbox",
-                "version": "1.6.4",
-                "dist": {
-                    "url": "https://github.com/jackmoore/colorbox/archive/master.zip",
-                    "type": "zip"
-                },
-                "type": "drupal-library"
-            }
-        },
-        "masonry": {
-            "type": "package",
-            "package": {
-                "name": "mukurtu/masonry",
-                "version": "4.2.2",
-                "dist": {
-                    "url": "https://github.com/desandro/masonry/archive/v4.2.2.zip",
-                    "type": "zip"
-                },
-                "type": "drupal-library"
-            }
         }
     },
     "require": {
