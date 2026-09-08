@@ -18,7 +18,10 @@
         }
     },
     "require": {
-        "mukurtu/mukurtu": "*"
+        "drupal/gin_lb": "^3.0@beta",
+        "drupal/og": "^1.x-dev",
+        "drupal/term_reference_change": "^2.0@beta",
+        "mukurtu/mukurtu": "*@beta"
     },
     "require-dev": {
         "drupal/core-dev": "*",
@@ -29,7 +32,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
