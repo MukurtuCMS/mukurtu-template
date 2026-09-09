@@ -2,7 +2,7 @@
     "name": "mukurtu/mukurtu-template",
     "description": "Project template for Mukurtu CMS v4+",
     "type": "project",
-    "license": "GPL-2.0-or-later",
+    "license": "GPL-3.0-or-later",
     "homepage": "https://mukurtu.org",
     "support": {
         "docs": "https://mukurtudocs.readthedocs.io"
