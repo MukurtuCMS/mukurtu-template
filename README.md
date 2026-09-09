@@ -22,6 +22,13 @@ ddev composer create-project mukurtu/mukurtu-template:dev-main
 ddev drush si --site-name=Mukurtu --account-name=admin --account-pass=admin
 ddev launch
 ```
+
+**Note:** This template includes `drupal/devel` and `drupal/devel_php` in
+`require-dev`, so they install by default unless you pass `--no-dev` to
+`composer create-project`. Mukurtu no longer enables Devel automatically, so both
+packages sit inert on disk until you turn them on. `devel_php` specifically provides
+an execute-PHP capability, so enable it deliberately.
+
 * If planning to develop on the Mukurtu CMS installation profile, follow the [additional installation steps to connect a Git checkout to the new project](https://github.com/MukurtuCMS/Mukurtu-CMS/wiki).
 
 ## Installing Mukurtu CMS with Composer
@@ -41,5 +48,12 @@ mkdir mukurtu
 cd mukurtu
 composer create-project mukurtu/mukurtu-template:dev-main .
 ```
+
+**Note:** This template includes `drupal/devel` and `drupal/devel_php` in
+`require-dev`, so they install by default unless you pass `--no-dev` to
+`composer create-project`. Mukurtu no longer enables Devel automatically, so both
+packages sit inert on disk until you turn them on. `devel_php` specifically provides
+an execute-PHP capability, so enable it deliberately.
+
 * Set your web server to serve the "web" folder (e.g. `mukurtu4/web`)
 * Install Drupal as normal by opening the site in your web browser, the Mukurtu profile distribution will automatically be used.

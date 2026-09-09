@@ -2,7 +2,7 @@
     "name": "mukurtu/mukurtu-template",
     "description": "Project template for Mukurtu CMS v4+",
     "type": "project",
-    "license": "GPL-2.0-or-later",
+    "license": "GPL-3.0-or-later",
     "homepage": "https://mukurtu.org",
     "support": {
         "docs": "https://mukurtudocs.readthedocs.io"
@@ -18,7 +18,10 @@
         }
     },
     "require": {
-        "mukurtu/mukurtu": "*"
+        "drupal/gin_lb": "^3.0@beta",
+        "drupal/og": "^1.x-dev",
+        "drupal/term_reference_change": "^2.0@beta",
+        "mukurtu/mukurtu": "^4.0"
     },
     "require-dev": {
         "drupal/core-dev": "*",
@@ -29,7 +32,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
