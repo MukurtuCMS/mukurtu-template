@@ -1,0 +1,52 @@
+# Guards the one failure mode this template can cause on its own: shipping a
+# root composer.json that no released mukurtu/mukurtu can satisfy.
+#
+# Composer honours stability flags, minimum-stability, repositories,
+# config.allow-plugins and extra.installer-paths ONLY in the root
+# composer.json, so changes the profile needs but cannot declare for itself
+# have to land here. The hazard is that this repo can be released ahead of the
+# profile release it depends on, at which point "mukurtu/mukurtu": "^4.0"
+# resolves only to tags that predate the matching profile change and the whole
+# install fails for everyone.
+#
+# That is not hypothetical: 4.0.1 pinned drupal/altcha to 2.0.0-beta1@beta as
+# the companion to MukurtuCMS/Mukurtu-CMS#2075, which was never tagged. Every
+# released mukurtu/mukurtu still required drupal/altcha ^1.2, so fresh installs
+# died with "conflicts with your root composer.json require". Fixed in 4.0.2.
+#
+# Resolving against live Packagist on every PR catches that before it merges.
+name: Composer resolution
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  COMPOSER_NO_INTERACTION: 1
+  COMPOSER_PROCESS_TIMEOUT: 0
+
+jobs:
+  resolve:
+    name: Resolves against released mukurtu/mukurtu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Matches the profile's own "php": ">=8.4" and its CI matrix.
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer:v2
+
+      - name: Validate composer.json
+        run: composer validate --no-check-all --no-check-lock
+
+      # --dry-run resolves the full graph against live Packagist and
+      # packages.drupal.org without writing anything. A root requirement no
+      # released mukurtu/mukurtu can satisfy fails here with a non-zero exit.
+      - name: Resolve dependencies
+        run: composer update --dry-run
