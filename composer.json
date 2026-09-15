@@ -18,7 +18,6 @@
         }
     },
     "require": {
-        "drupal/altcha": "2.0.0-beta1@beta",
         "drupal/gin_lb": "^3.0@beta",
         "drupal/og": "^1.x-dev",
         "drupal/term_reference_change": "^2.0@beta",
