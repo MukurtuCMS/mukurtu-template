@@ -1,5 +1,7 @@
 # Mukurtu CMS v4 Project Template
 
+This template only covers getting a Mukurtu site's code and database in place. For the full Mukurtu repository and information, see [Mukurtu CMS]([url](https://github.com/MukurtuCMS/Mukurtu-CMS)).
+
 ## Requirements
 * The necessary database server, web server, and PHP installed that meet [modern Drupal requirements](https://www.drupal.org/docs/system-requirements)
   * PHP 8.4 is supported.
