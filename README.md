@@ -1,10 +1,11 @@
 # Mukurtu CMS v4 Project Template
 
-This template only covers getting a Mukurtu site's code and database in place. For the full Mukurtu repository and information, see [Mukurtu CMS]([url](https://github.com/MukurtuCMS/Mukurtu-CMS)).
+This template only covers getting a Mukurtu site's code and database in place. For the full Mukurtu repository and information, see [Mukurtu CMS](https://github.com/MukurtuCMS/Mukurtu-CMS).
+The template has its own version numbers, which are not the Mukurtu version. Any 4.x template installs the newest Mukurtu 4.x release. To see your site's Mukurtu version, check the Mukurtu Dashboard.
 
 ## Requirements
 * The necessary database server, web server, and PHP installed that meet [modern Drupal requirements](https://www.drupal.org/docs/system-requirements)
-  * PHP 8.4 is supported.
+  * PHP 8.4 or later is required.
   * Currently MariaDB or MySQL is supported. PostGRES is not.
   * The Mukurtu Team does our internal work with nginx. Apache SHOULD work fine, but we have not tested it extensively.
 * [Composer](https://getcomposer.org/)
@@ -57,14 +58,10 @@ mv composer.phar composer
 ```
 mkdir mukurtu
 cd mukurtu
-composer create-project mukurtu/mukurtu-template:^4.0 .
+composer create-project --no-dev mukurtu/mukurtu-template:^4.0 .
 ```
 
-**Note:** This template includes `drupal/devel` and `drupal/devel_php` in
-`require-dev`, so they install by default unless you pass `--no-dev` to
-`composer create-project`. Mukurtu no longer enables Devel automatically, so both
-packages sit inert on disk until you turn them on. `devel_php` specifically provides
-an execute-PHP capability, so enable it deliberately.
+**Note:** `--no-dev` leaves out `drupal/devel` and `drupal/devel_php`, which a production site does not need. `devel_php` can run arbitrary PHP. Leave out `--no-dev` only on a development site.
 
 * Set your web server to serve the "web" folder (e.g. `mukurtu4/web`)
 * Install Drupal as normal by opening the site in your web browser, the Mukurtu profile distribution will automatically be used.
