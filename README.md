@@ -1,6 +1,7 @@
 # Mukurtu CMS v4 Project Template
 
 This template only covers getting a Mukurtu site's code and database in place. For the full Mukurtu repository and information, see [Mukurtu CMS](https://github.com/MukurtuCMS/Mukurtu-CMS).
+
 The template has its own version numbers, which are not the Mukurtu version. Any 4.x template installs the newest Mukurtu 4.x release. To see your site's Mukurtu version, check the Mukurtu Dashboard.
 
 ## Requirements
